@@ -203,7 +203,7 @@ head(j_biomed[c('journal_name', 'ISSN', 'IF')], n=10)
 ## 10                                  NATURE MEDICINE 1078-8956  87.241
 ```
 
-## RSS links
+## ISSN
 
 ### >=15
 

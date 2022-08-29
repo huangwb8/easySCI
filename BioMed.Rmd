@@ -170,7 +170,7 @@ head(j_biomed[c('journal_name', 'ISSN', 'IF')], n=10)
 
 ```
 
-## RSS links
+## ISSN
 
 ### >=15
 
