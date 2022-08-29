@@ -182,6 +182,27 @@ j_biomed <- filter(
 ) %>% arrange(desc(IF))
 ```
 
+Have a look at the target journals:
+
+
+```r
+head(j_biomed[c('journal_name', 'ISSN', 'IF')], n=10)
+```
+
+```
+##                                        journal_name      ISSN      IF
+## 1                CA-A CANCER JOURNAL FOR CLINICIANS 0007-9235 286.130
+## 2                                            LANCET 0140-6736 202.731
+## 3                   NEW ENGLAND JOURNAL OF MEDICINE 0028-4793 176.079
+## 4  JAMA-JOURNAL OF THE AMERICAN MEDICAL ASSOCIATION 0098-7484 157.335
+## 5             NATURE REVIEWS MOLECULAR CELL BIOLOGY 1471-0072 113.915
+## 6                     NATURE REVIEWS DRUG DISCOVERY 1474-1776 112.288
+## 7                         NATURE REVIEWS IMMUNOLOGY 1474-1733 108.555
+## 8                       Lancet Respiratory Medicine 2213-2600 102.642
+## 9                       BMJ-British Medical Journal 1756-1833  93.333
+## 10                                  NATURE MEDICINE 1078-8956  87.241
+```
+
 ## RSS links
 
 ### >=15

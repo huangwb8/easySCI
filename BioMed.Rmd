@@ -163,6 +163,13 @@ j_biomed <- filter(
 
 ```
 
+Have a look at the target journals:
+
+```{r}
+head(j_biomed[c('journal_name', 'ISSN', 'IF')], n=10)
+
+```
+
 ## RSS links
 
 ### >=15
