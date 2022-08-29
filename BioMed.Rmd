@@ -9,7 +9,7 @@ output:
     toc_depth: 3
     highlight: github
     math: katex
-    keep_md: true
+    keep_md: false
 ---
 
 
