@@ -38,11 +38,11 @@ Open an [issue](https://github.com/huangwb8/easySCI/issues) with Pubmed searchin
 ("neoplasms"[MeSH]) OR ("neoplasm"[Title/Abstract]) OR ("neoplasms"[Title/Abstract]) OR ("cancer"[Title/Abstract]) OR ("cancers"[Title/Abstract]) OR ("carcinoma"[Title/Abstract]) OR ("carcinomas"[Title/Abstract])
 ```
 
-Then search in Pubmed with the logical form like `(Searching terms) and (target journals)`. Create a RSS link and save it. Very simple, isn't it?
+Then search in PubMed with the logical form like `(Searching terms) and (target journals)`. Create a RSS link and save it. Very simple, isn't it?
 
 ## Contributing
 
-To be continued!
+Welcome to be a contributor of this project!
 
 ## License
 
