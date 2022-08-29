@@ -18,13 +18,9 @@ All researchers want to receive the latest studies with as less effort as possib
 
 ## Demo
 
-RSS links in Tiny Tiny RSS (one of RSS readers): 
+> The RSS reader showed here is Tiny Tiny RSS.
 
-![chrome_rci93YOgcp](https://chevereto.hwb0307.com/images/2022/08/29/chrome_rci93YOgcp.webp)
-
-Open a record:
-
-![chrome_N1wJ1emiua](https://chevereto.hwb0307.com/images/2022/08/29/chrome_N1wJ1emiua.webp)
+![chrome_rAp33v0M7g](https://chevereto.hwb0307.com/images/2022/08/30/chrome_rAp33v0M7g.gif)
 
 ## Maintainers
 
