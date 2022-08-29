@@ -10,7 +10,7 @@ All researchers want to receive the latest studies with less effort.
 
 ## Usage
 
-`*.Rmd` or `*.HTML` show the process of ISSN filtering with R programing. The RSS links could be input in an RSS reader such as Tiny Tiny RSS.
+`*.Rmd` or `*.HTML` show the process of ISSN filtering with R programing. The RSS links could be input in an RSS reader such as Tiny Tiny RSS. If you have no idea about RSS, you can visit [my blog](https://blognas.hwb0307.com/map) for help (Chinese).
 
 ### Biology & Medicine
 
