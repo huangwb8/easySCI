@@ -4,9 +4,7 @@
 
 ## Background
 
-All researchers want to receive the latest studies with less effort. 
-
-**easySCI** is an annually-updated project about easily tracing research updates in SCI journals with RSS, which are weighted via Impact Factor. Now only Biology & Medicine supported.
+All researchers want to receive the latest studies with as less effort as possible. **easySCI** is an annually-updated project about easily tracing research updates in Pubmed SCI journals with RSS, where journals are stratified via Impact Factor (IF). Although it's controvertial using IF to profile the importance of articles, IF is a simple but effective strategy to acheive academic updates. Now only Biology & Medicine supported. 
 
 ## Usage
 
@@ -36,9 +34,19 @@ Open a record:
 
 + Support more and more areas
 
+## How to contribute
+
+Open an [issue](https://github.com/huangwb8/easySCI/issues) with Pubmed searching term like [here](https://github.com/huangwb8/easySCI/blob/main/Search%20Term.md). Take `Cancer` as an example:
+
+```
+("neoplasms"[MeSH]) OR ("neoplasm"[Title/Abstract]) OR ("neoplasms"[Title/Abstract]) OR ("cancer"[Title/Abstract]) OR ("cancers"[Title/Abstract]) OR ("carcinoma"[Title/Abstract]) OR ("carcinomas"[Title/Abstract])
+```
+
+Then search in Pubmed with the logical form like `(Searching terms) and (target journals)`. Create a RSS link and save it. Very simple, isn't it?
+
 ## Contributing
 
-If you have any suggestions, please do not hesitate to open an [issue](https://github.com/huangwb8/easySCI/issues). I'm also looking forward to more area included by you!
+To be continued!
 
 ## License
 
