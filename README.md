@@ -14,7 +14,7 @@ All researchers want to receive the latest studies with less effort.
 
 ### Biology & Medicine
 
-> [Rmd](https://github.com/huangwb8/easySCI/blob/main/BioMed.Rmd); [HTML](http://htmlpreview.github.io/?https://github.com/huangwb8/easySCI/blob/main/BioMed.html)
+> [Rmd](https://raw.githubusercontent.com/huangwb8/easySCI/main/BioMed.Rmd); [HTML](http://htmlpreview.github.io/?https://github.com/huangwb8/easySCI/blob/main/BioMed.html)
 
 + RSS-Cancer: | [>=15](https://pubmed.ncbi.nlm.nih.gov/rss/search/1PqbW6kGMDPf-yLHJMRvJKCULZQRJtMnk9CTYdZriokv096kHR/?limit=20&utm_campaign=pubmed-2&fc=20220829074127) | [>10](https://pubmed.ncbi.nlm.nih.gov/rss/search/1j5cNbPuzU_61Tz-Qg1vnc_ZtX59BAoJsN_UB-eeozxW3wYsOZ/?limit=20&utm_campaign=pubmed-2&fc=20220829075717) | [>7](https://pubmed.ncbi.nlm.nih.gov/rss/search/1x1PPzbhojragl3O9VVpHGH2UtvKpI_JBCu-xgcWkI8ENbFsC0/?limit=20&utm_campaign=pubmed-2&fc=20220829075916) | [>6](https://pubmed.ncbi.nlm.nih.gov/rss/search/1peHU8KZd8f-OMZZ3HPRwBJQmW4q2F63ypFQmdc8qUO0XUJERR/?limit=20&utm_campaign=pubmed-2&fc=20220829080203) | [>5.5](https://pubmed.ncbi.nlm.nih.gov/rss/search/1pEhTjOZGNUCUlZMTljgEfx-VSRdyWmBVyPPOqvW1a2ElsykQZ/?limit=20&utm_campaign=pubmed-2&fc=20220829080345) | [>5](https://pubmed.ncbi.nlm.nih.gov/rss/search/1zYrsILa0sOmmYxKvXOe_Nct0EGG0PHz2KQr2ch3bN_1vbGMLm/?limit=20&utm_campaign=pubmed-2&fc=20220829080606) |
 
