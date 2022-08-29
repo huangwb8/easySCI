@@ -1,6 +1,6 @@
 # easySCI
 
-### A List of Core SCI Journals  For Academics
+#### A List of Core SCI Journals  For Academics
 
 ## Background
 
