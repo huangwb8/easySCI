@@ -1,0 +1,227 @@
+---
+title: "Core SCI Journal List For Chinese Academics in Biology & Medicine"
+author: "Weibin Huang"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+    math: katex
+    keep_md: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+# Packages
+
+```{r}
+packages_needed <- c("dplyr","plyr","readxl","readr","stringr")
+
+if (!requireNamespace("pacman", quietly = TRUE)){
+  install.packages("pacman")
+  library(pacman)
+} else {
+  library(pacman)
+}
+  
+for(i in packages_needed){p_load(char=i)}
+```
+
+# Data
+
+Load JCR information data:
+
+```{r}
+j <- read_xlsx('raw/2022IF.xlsx', na = c("", "N/A"), col_types = c( "text", "text","text", "text",  "numeric",  "numeric",  "numeric",  "numeric")) %>% 
+  arrange(category, desc(IF)) %>% 
+  as.data.frame()
+str(j)
+```
+
+
+# Filtering
+
+All Journals listed in Pubmed:
+
+```{r}
+issn_avail <- read_delim('raw/List of All Journals in Pubmed.txt', delim  = '\t') %>% 
+  as.matrix() %>% as.character() %>% 
+  .[grepl('issn',., ignore.case = T)] %>% 
+  str_extract(.,pattern = '[0-9|X]{4}[-][0-9|X]{4}') %>%
+  unique(.[!is.na(.)])
+```
+
+Warning journals in bioMed
+
+> [http://xueke.xhsysu.edu.cn/info/1040/3265.htm](http://xueke.xhsysu.edu.cn/info/1040/3265.htm)
+
+```{r}
+
+issn_warn <- c(
+  # BioFactors
+  '0951-6433',
+  
+  # Frontiers in Cell and Developmental Biology
+  '2296-634X',
+  
+  # Pharmazie
+  '0031-7144',
+  
+  # Molecular Therapy-Nucleic Acids
+  '2162-2531',
+  
+  # Experimental and Molecular Pathology
+  '0014-4800',
+  
+  # Journal of Cellular and Molecular Medicine
+  '1582-1838',
+  
+  # Molecular Medicine Reports
+  '1791-2997',
+  
+  # Journal of International Medical Research
+  '0300-0605',
+  
+  # Journal of Cancer
+  '1837-9664',
+  
+  # Aging-US
+  '1945-4589',
+  
+  # OncoTargets and Therapy,
+  '1178-6930',
+  
+  # Cancer Management and Research
+  '1179-1322',
+  
+  # World Journal of Clinical Cases
+  '2307-8960',
+  
+  # Annals of Palliative Medicine
+  '2224-5820'
+  
+)
+```
+
+ISSN available in Pubmed: 
+
+```{r}
+j$ISSN <- apply(
+  as.matrix(j[c('issn', 'eissn')]), 
+  1, 
+  function(x){
+    x2 <- x[x %in% issn_avail]
+    if(length(x2) == 0){
+      return(NA)
+    } else if(length(x2) == 1) {
+      return(x2)
+    } else {
+      return(x2[1])
+    }
+})
+
+```
+
+Target journals:
+
+```{r}
+
+# Filters
+target_biomed <- read.table('raw/SCI category_Biology&Medicine.txt')[,1] %>% 
+  as.character() %>% 
+  paste0(.,collapse = '|')
+target_other <- 'MULTIDISCIPLINARY SCIENCES' # Nature/Science等杂志
+target_sci <- 'SSCI|SCIE'
+
+# Target
+j_biomed <- filter(
+  
+  j,
+  
+  # Not a Warning journal in Chinese Academy of Sciences Ranking
+  !ISSN %in% issn_warn,
+  
+  # With availble Impact factor
+  !is.na(IF),
+  
+  # With ISSN in Pubmed
+  !is.na(ISSN),
+  
+  # IF>=5 And Q1/Q2; IF < 5 And Q1
+  (IF>=5 & grepl('Q1|Q2', category) & !grepl('Q3|Q4', category)) | (IF < 5 & grepl('Q1', category) & !grepl('Q2|Q3|Q4', category)), 
+  
+  # Area in Biology/Medicine/Multidisciprinary
+  grepl(target_biomed, category) | grepl(target_other, category),
+  
+  # As a SSCI/SCIE journal
+  grepl(target_sci, category)
+  
+) %>% arrange(desc(IF))
+
+```
+
+## RSS links
+
+### >=15
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1PqbW6kGMDPf-yLHJMRvJKCULZQRJtMnk9CTYdZriokv096kHR/?limit=20&utm_campaign=pubmed-2&fc=20220829074127
+
+```{r}
+j_biomed_15 <- filter(j_biomed, IF>=15)
+j_biomed_15$ISSN %>% paste0(.,collapse = '|')
+```
+
+
+### >=10
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1j5cNbPuzU_61Tz-Qg1vnc_ZtX59BAoJsN_UB-eeozxW3wYsOZ/?limit=20&utm_campaign=pubmed-2&fc=20220829075717
+
+```{r}
+j_biomed_10 <- filter(j_biomed, IF<15, IF>=10)
+j_biomed_10$ISSN %>% paste0(.,collapse = '|')
+```
+
+
+### >=7
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1x1PPzbhojragl3O9VVpHGH2UtvKpI_JBCu-xgcWkI8ENbFsC0/?limit=20&utm_campaign=pubmed-2&fc=20220829075916
+
+```{r}
+j_biomed_7 <- filter(j_biomed, IF<10, IF>=7)
+j_biomed_7$ISSN %>% paste0(.,collapse = '|')
+```
+
+### >=6
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1peHU8KZd8f-OMZZ3HPRwBJQmW4q2F63ypFQmdc8qUO0XUJERR/?limit=20&utm_campaign=pubmed-2&fc=20220829080203
+
+```{r}
+j_biomed_6 <- filter(j_biomed, IF<7, IF>=6)
+j_biomed_6$ISSN %>% paste0(.,collapse = '|')
+```
+
+
+### >=5.5
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1pEhTjOZGNUCUlZMTljgEfx-VSRdyWmBVyPPOqvW1a2ElsykQZ/?limit=20&utm_campaign=pubmed-2&fc=20220829080345
+
+```{r}
+j_biomed_5.5 <- filter(j_biomed, IF<6, IF>=5.5)
+j_biomed_5.5$ISSN %>% paste0(.,collapse = '|')
+```
+
+
+### >=5
+
+> https://pubmed.ncbi.nlm.nih.gov/rss/search/1zYrsILa0sOmmYxKvXOe_Nct0EGG0PHz2KQr2ch3bN_1vbGMLm/?limit=20&utm_campaign=pubmed-2&fc=20220829080606
+
+```{r}
+j_biomed_5 <- filter(j_biomed, IF<5.5, IF>=5)
+j_biomed_5$ISSN %>% paste0(.,collapse = '|')
+
+```
+
+
