@@ -5,6 +5,8 @@ date: "`r Sys.Date()`"
 output:
   prettydoc::html_pretty:
     theme: architect
+    toc: TRUE
+    toc_depth: 3
     highlight: github
     math: katex
     keep_md: true
@@ -12,7 +14,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, comment = '')
 ```
 
 # Packages
@@ -170,9 +172,9 @@ head(j_biomed[c('journal_name', 'ISSN', 'IF')], n=10)
 
 ```
 
-## ISSN
+# ISSN
 
-### >=15
+## >=15
 
 ```{r}
 j_biomed_15 <- filter(j_biomed, IF>=15)
@@ -180,7 +182,7 @@ j_biomed_15$ISSN %>% paste0(.,collapse = '|')
 ```
 
 
-### >=10
+## >=10
 
 
 ```{r}
@@ -189,7 +191,7 @@ j_biomed_10$ISSN %>% paste0(.,collapse = '|')
 ```
 
 
-### >=7
+## >=7
 
 
 ```{r}
@@ -197,7 +199,7 @@ j_biomed_7 <- filter(j_biomed, IF<10, IF>=7)
 j_biomed_7$ISSN %>% paste0(.,collapse = '|')
 ```
 
-### >=6
+## >=6
 
 
 ```{r}
@@ -206,7 +208,7 @@ j_biomed_6$ISSN %>% paste0(.,collapse = '|')
 ```
 
 
-### >=5.5
+## >=5.5
 
 
 ```{r}
@@ -215,13 +217,21 @@ j_biomed_5.5$ISSN %>% paste0(.,collapse = '|')
 ```
 
 
-### >=5
-
+## >=5
 
 ```{r}
 j_biomed_5 <- filter(j_biomed, IF<5.5, IF>=5)
 j_biomed_5$ISSN %>% paste0(.,collapse = '|')
 
 ```
+
+## <5
+
+```{r}
+j_biomed_m5 <- filter(j_biomed, IF<5)
+j_biomed_m5$ISSN %>% paste0(.,collapse = '|')
+
+```
+
 
 
