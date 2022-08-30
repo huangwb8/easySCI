@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="1.0">
+  <body>
+    <outline text="CNS" ttrssSortOrder="2">
+      <outline type="rss" text="Cell" xmlUrl="https://rsshub.app/cell/cell/inpress" ttrssSortOrder="1" ttrssPurgeInterval="0" ttrssUpdateInterval="0" htmlUrl="https://www.cell.com"/>
+      <outline type="rss" text="Science" xmlUrl="https://www.science.org/action/showFeed?type=axatoc&amp;feed=rss&amp;jc=science" ttrssSortOrder="2" ttrssPurgeInterval="0" ttrssUpdateInterval="0" htmlUrl="https://www.science.org/?af=R"/>
+      <outline type="rss" text="Nature" xmlUrl="https://rsshub.app/nature/research/nature" ttrssSortOrder="3" ttrssPurgeInterval="0" ttrssUpdateInterval="0" htmlUrl="https://www.nature.com/nature/research-articles"/>
+    </outline>
+  </body>
+</opml>
