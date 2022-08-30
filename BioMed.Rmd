@@ -37,6 +37,7 @@ for(i in packages_needed){p_load(char=i)}
 Load JCR information data:
 
 ```{r}
+# 来自微信公众号: 生信小课堂
 j <- read_xlsx('raw/2022IF.xlsx', na = c("", "N/A"), col_types = c( "text", "text","text", "text",  "numeric",  "numeric",  "numeric",  "numeric")) %>% 
   arrange(category, desc(IF)) %>% 
   as.data.frame()
