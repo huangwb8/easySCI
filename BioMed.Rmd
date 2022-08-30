@@ -58,7 +58,7 @@ issn_avail <- read_delim('raw/List of All Journals in Pubmed.txt', delim  = '\t'
 
 Warning journals in bioMed
 
-> [http://xueke.xhsysu.edu.cn/info/1040/3265.htm](http://xueke.xhsysu.edu.cn/info/1040/3265.htm)
+> [2021年《国际期刊预警名单（试行）》](https://earlywarning.fenqubiao.com/#/zh-cn/early-warning-journal-list-2021)
 
 ```{r}
 
