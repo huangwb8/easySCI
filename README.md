@@ -24,7 +24,7 @@ The OPML file for `Cell`, `Nature`, and `Science` is [here](https://github.com/h
 
 > The RSS reader showed here is [Tiny Tiny RSS](https://blognas.hwb0307.com/linux/docker/788).
 
-![chrome_rAp33v0M7g](https://chevereto.hwb0307.com/images/2022/08/30/chrome_rAp33v0M7g.gif)
+![chrome_5u4uGWjgqh.gif](https://chevereto.hwb0307.com/images/2022/09/01/chrome_5u4uGWjgqh.gif)
 
 ## Maintainers
 
@@ -33,6 +33,7 @@ The OPML file for `Cell`, `Nature`, and `Science` is [here](https://github.com/h
 ## TODO
 
 + Support more and more areas
++ More contributors
 
 ## How to contribute
 
