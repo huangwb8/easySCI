@@ -4,7 +4,7 @@
 
 ## Background
 
-All researchers want to receive the latest studies with as less effort as possible. **<font color="#dd0000">easySCI</font>** is an annually-updated project about **<font color="#dd0000">easily tracing research updates in PubMed SCI journals with RSS</font>**, where journals are stratified via Impact Factor (IF). Although it's controvertial using IF to profile the importance of articles, IF is a simple but effective strategy to acheive academic updates. Now only Biology & Medicine supported. 
+All researchers want to receive the latest studies with as less effort as possible. **<font color="#dd0000">easySCI</font>** is an annually-updated project about **<font color="#dd0000">easily tracing research updates in PubMed SCI journals with RSS</font>**, where journals are stratified via Impact Factor (IF). Although it's controvertial using IF to profile the importance of articles, IF is a simple but effective strategy to weight academic updates. Now only Biology & Medicine supported, but more areas would be supported as soon as possible.
 
 ## Usage
 
